@@ -5,7 +5,11 @@ import { Component, OnInit } from '@angular/core';
   template: `<div>
                   Inline HTML Template
              </div>`,
-  styleUrls: ['./test.component.css']
+  styles: [`
+          div{
+            color: red;
+          }
+  `]
 })
 export class TestComponent implements OnInit {
 
