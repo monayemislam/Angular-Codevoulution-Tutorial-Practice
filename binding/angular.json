@@ -3,13 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-practice-codevolution": {
+    "binding": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-practice-codevolution",
+            "outputPath": "dist/binding",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-practice-codevolution:build:production"
+              "browserTarget": "binding:build:production"
             },
             "development": {
-              "browserTarget": "angular-practice-codevolution:build:development"
+              "browserTarget": "binding:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-practice-codevolution:build"
+            "browserTarget": "binding:build"
           }
         },
         "test": {
@@ -102,5 +98,7 @@
       }
     }
   },
-  "defaultProject": "angular-practice-codevolution"
+  "cli": {
+    "analytics": false
+  }
 }
