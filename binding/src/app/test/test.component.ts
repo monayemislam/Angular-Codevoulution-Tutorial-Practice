@@ -3,17 +3,32 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-test',
   template: `<h2>Welcome {{name}}</h2>
-             <input type="text" [id]="myId" value="14">
-             <input type="text" [disabled]="isDisabled" value="{{name}}">
+             <h2 class="text-success">Codevolution</h2>
+             <h2 [class]="successClass">Codevolution</h2>
+             <h2 [class.text-danger]="hasError">Codevolution</h2>
+             <h2 [ngClass]="messageClasses">Codevolution</h2>
             `,
-  styleUrls: ['./test.component.css']
+  styles: [`
+      .text-success{
+        color: darkgreen;
+      }
+      .text-danger{
+        color: darkred;
+      }
+      .text-special{
+        border: 2px solid red;
+      }
+  `]
 })
 export class TestComponent implements OnInit {
 
   public name = "Monayem";
-  public myId="testId";
-  public isDisabled=true;
-  public siteUrl=window.location.href;
+  public successClass = "text-success";
+  public hasError:boolean = true;
+  public messageClasses = {
+    "text-success" : !this.hasError,
+    "text-special" : this.successClass
+  }
   constructor() { }
 
   ngOnInit(): void {
