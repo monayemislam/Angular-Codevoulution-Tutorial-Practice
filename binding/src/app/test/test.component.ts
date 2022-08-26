@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-test',
   template: `<h2>Welcome {{name}}</h2>
-             <button (click)="onClick()">Greet</button>
-             {{greetings}}
+              <input #myId type="text">
+             <button (click)="logMessage(myId.value)">Log</button>
             `,
   styles: [`
 
@@ -13,10 +13,8 @@ import { Component, OnInit } from '@angular/core';
 export class TestComponent implements OnInit {
 
   public name = "Monayem";
-  public greetings = "";
-  public onClick() {
-    this.greetings = "Greetings from"+this.name;
-    console.log("hello");
+  public logMessage(logMessageData: any) {
+    console.log(logMessageData);
   }
   constructor() { }
 
